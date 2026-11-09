@@ -47,15 +47,15 @@
 	
 }
 
-
 .hp {/*hp class */
     position: absolute;
-    left: 63%;
+    left: 70%;
     top: 5%;
-    width: 40%;
+    width: 30%;
 	height: 100%;
 transform:scale(0.9);	
 }
+
 
 .gazou {
 	position: absolute;
