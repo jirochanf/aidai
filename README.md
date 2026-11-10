@@ -2,7 +2,7 @@
 chat gptを使って数秒で作成されたコードです
 https://jirochanf.github.io/aidai/kantan.html
 <p align="center">
-<a href="https://jirochanf.github.io/aidai/kantan.html"><img src="./26eu00001.JPG" alt="MindArを利用したWebAR" width="700" height="365"></a>
+<a href="https://jirochanf.github.io/aidai/kantan.html"><img src="./barcero.jpg" alt="MindArを利用したWebAR" width="700" height="365"></a>
 </p>
 
 ファイル構成
