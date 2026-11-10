@@ -4,7 +4,6 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
   <title>MindAR Image Tracking</title>
 
   <!-- A-Frame -->
@@ -15,14 +14,12 @@
 </head>
 
 <body>
-
   <a-scene
     mindar-image="imageTargetSrc: ./targets_barcero.mind;"
     color-space="sRGB"
     renderer="colorManagement: true"
     vr-mode-ui="enabled: false"
     device-orientation-permission-ui="enabled: false">
-
     <!-- 表示する画像 -->
     <a-assets>
       <img
@@ -30,25 +27,20 @@
         src="./26eu00001.JPG"
         crossorigin="anonymous">
     </a-assets>
-
     <!-- カメラ -->
     <a-camera
       position="0 0 0"
       look-controls="enabled: false">
     </a-camera>
-
     <!-- 画像認識したときに表示 -->
     <a-entity mindar-image-target="targetIndex: 0">
-
       <a-plane
         src="#myImage"
         position="0 0 0"
         width="1"
         height="0.7">
       </a-plane>
-
     </a-entity>
-
   </a-scene>
 
 </body>
