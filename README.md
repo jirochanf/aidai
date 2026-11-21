@@ -17,6 +17,27 @@ aidai/<br>
 chatgptがkantan.htmlを修正<br>
 https://jirochanf.github.io/aidai/k_overl.html<br>
 
+<head>
+  <style>
+      #example-scanning-overlay {
+      }
+      #example-scanning-overlay.hidden {
+        display: none;
+      }
+      ...
+  </style>
+</head>
+<body>
+  <div id="example-scanning-overlay" class="hidden">
+    ...
+  </div>
+  <a-scene mindar-image="uiScanning: #example-scanning-overlay; imageTargetSrc: ./targets.mind">
+    ...
+  </a-scene>
+</body>
+
+
+
 ## dejisa
 デジタルサイネージテンプレート<br>
 デジタルサイネージをWebで実現します<br>
