@@ -30,7 +30,15 @@
     <!-- targetIndex: 0 = 画像A(.mindファイルの1枚目) -->
     <a-entity id="targetA" mindar-image-target="targetIndex: 0">
       <!-- 幅1 = 画像Aの横幅と同じ大きさ。高さはBの縦横比に合わせて調整 -->
+      <a-plane
+        src="#imageB"
+        position="0 0 0"
+        width="1"
+        height="0.7">
+      </a-plane>
+<!--
       <a-image src="#imageB" position="0 0 0" width="1" height="0.75"></a-image>
+      -->
     </a-entity>
   </a-scene>
 
