@@ -1,4 +1,5 @@
 <!DOCTYPE html>
+<!--  claudeにA画像を認識したらB画像を表示するコードと質問したときの回答-->
 <html lang="ja">
 <head>
   <meta charset="utf-8">
@@ -13,7 +14,7 @@
 <body>
   <!-- imageTargetSrc: 画像Aから生成した .mind ファイル -->
   <a-scene
-    mindar-image="imageTargetSrc: ./targets.mind; uiScanning: yes; uiLoading: yes;"
+    mindar-image="imageTargetSrc: ./targets_barcero.mind; uiScanning: yes; uiLoading: yes;"
     color-space="sRGB"
     renderer="colorManagement: true, physicallyCorrectLights"
     vr-mode-ui="enabled: false"
@@ -21,7 +22,7 @@
 
     <a-assets>
       <!-- 表示したい画像B -->
-      <img id="imageB" src="./B.png">
+      <img id="imageB" src="./barcero.jpg">
     </a-assets>
 
     <a-camera position="0 0 0" look-controls="enabled: false"></a-camera>
