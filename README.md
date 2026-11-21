@@ -11,7 +11,11 @@ https://jirochanf.github.io/aidai/kantan.html<br>
 aidai/<br>
 ├── kantan.html<br>
 ├── targets_barcero.mind<br>
-└── 26eu00001.JPG<br>
+└── seikai.jpg<br>
+
+ターゲットスキャン中にオーバーレイ画像を表示する<br>
+chatgptがkantan.htmlを修正<br>
+https://jirochanf.github.io/aidai/k_overl.html<br>
 
 ## dejisa
 デジタルサイネージテンプレート<br>
