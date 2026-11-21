@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>WebAR 画像トラッキング</title>
+  <style>
+    body { margin: 0; overflow: hidden; }
+  </style>
+  <script src="https://cdn.jsdelivr.net/npm/aframe@1.5.0/dist/aframe.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/mind-ar@1.2.5/dist/mindar-image-aframe.prod.js"></script>
+</head>
+<body>
+  <!-- imageTargetSrc: 画像Aから生成した .mind ファイル -->
+  <a-scene
+    mindar-image="imageTargetSrc: ./targets.mind; uiScanning: yes; uiLoading: yes;"
+    color-space="sRGB"
+    renderer="colorManagement: true, physicallyCorrectLights"
+    vr-mode-ui="enabled: false"
+    device-orientation-permission-ui="enabled: false">
+
+    <a-assets>
+      <!-- 表示したい画像B -->
+      <img id="imageB" src="./B.png">
+    </a-assets>
+
+    <a-camera position="0 0 0" look-controls="enabled: false"></a-camera>
+
+    <!-- targetIndex: 0 = 画像A(.mindファイルの1枚目) -->
+    <a-entity id="targetA" mindar-image-target="targetIndex: 0">
+      <!-- 幅1 = 画像Aの横幅と同じ大きさ。高さはBの縦横比に合わせて調整 -->
+      <a-image src="#imageB" position="0 0 0" width="1" height="0.75"></a-image>
+    </a-entity>
+  </a-scene>
+
+  <script>
+    // 認識したとき・見失ったときの処理(任意)
+    const target = document.querySelector("#targetA");
+    target.addEventListener("targetFound", () => console.log("画像Aを検出"));
+    target.addEventListener("targetLost", () => console.log("画像Aを見失った"));
+  </script>
+</body>
+</html>
