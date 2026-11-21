@@ -6,4 +6,13 @@ mind-arの設定　基本
     vr-mode-ui="enabled: false"
     device-orientation-permission-ui="enabled: false">
 
-オーバーレイ表示あり
+<a-scene 
+    mindar-image="imageTargetSrc: https://jirochanf.github.io/card/assets/targets_barcero.mind; 
+<!--オーバーレイ表示
+showStats: false; uiScanning: #example-scanning-overlay;"
+    embedded 
+-->
+color-space="sRGB" 
+    renderer="colorManagement: true, physicallyCorrectLights"
+    vr-mode-ui="enabled: false" 
+    device-orientation-permission-ui="enabled: false">
