@@ -32,6 +32,16 @@
         webkit-playsinline
         crossorigin="anonymous">
       </video>
+      <video
+        id="myVideo2"
+        src="./movie2.mp4"
+        preload="auto"
+        loop="true"
+        muted
+        playsinline
+        webkit-playsinline
+        crossorigin="anonymous">
+      </video>
     </a-assets>
 
     <!-- カメラ -->
@@ -45,6 +55,13 @@
 
       <a-plane
         position="0.9 0 0"
+        rotation="20 0 0"
+        width="1"
+        height="0.7"
+        material="shader: flat; src: #myVideo">
+      </a-plane>
+      <a-plane
+        position="0 1 0"
         rotation="20 0 0"
         width="1"
         height="0.7"
