@@ -74,16 +74,28 @@
 
   <script>
     const video = document.querySelector("#myVideo");
-
     const target = document.querySelector(
       "[mindar-image-target]"
     );
-
     // 画像を認識したとき
     target.addEventListener("targetFound", () => {
       video.play();
     });
+    // 画像を見失ったとき
+    target.addEventListener("targetLost", () => {
+      video.pause();
+    });
+  </script>
 
+    <script>
+    const video = document.querySelector("#myVideo2");
+    const target = document.querySelector(
+      "[mindar-image-target]"
+    );
+    // 画像を認識したとき
+    target.addEventListener("targetFound", () => {
+      video.play();
+    });
     // 画像を見失ったとき
     target.addEventListener("targetLost", () => {
       video.pause();
