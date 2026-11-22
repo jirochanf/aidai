@@ -17,7 +17,7 @@ aidai/<br>
 https://jirochanf.github.io/aidai/meishi_douga.html<br>
 ターゲットファイルはこの画像
 <p align="center">
-<a href="https://jirochanf.github.io/aidai/meishi_douga.html"><img src="./2024_omote.jpg" alt="WebAR動画再生" width="700" height="365"></a>
+<a href="https://jirochanf.github.io/aidai/meishi_douga.html"><img src="./2024_omote.jpg" alt="WebAR動画再生" width="500" height="300"></a>
 </p>
 
 
