@@ -73,34 +73,30 @@
   </a-scene>
 
   <script>
-    const video = document.querySelector("#myVideo");
-    const target = document.querySelector(
-      "[mindar-image-target]"
-    );
-    // 画像を認識したとき
-    target.addEventListener("targetFound", () => {
-      video.play();
-    });
-    // 画像を見失ったとき
-    target.addEventListener("targetLost", () => {
-      video.pause();
-    });
-  </script>
+  const video = document.querySelector("#myVideo");
+  const video2 = document.querySelector("#myVideo2");
 
-    <script>
-    const video2 = document.querySelector("#myVideo2");
-    const target = document.querySelector(
-      "[mindar-image-target]"
-    );
-    // 画像を認識したとき
-    target.addEventListener("targetFound", () => {
-      video2.play();
+  const target = document.querySelector(
+    "[mindar-image-target]"
+  );
+
+  // 画像を認識したとき
+  target.addEventListener("targetFound", () => {
+    video.play().catch(error => {
+      console.log("動画1の再生エラー:", error);
     });
-    // 画像を見失ったとき
-    target.addEventListener("targetLost", () => {
-      video2.pause();
+
+    video2.play().catch(error => {
+      console.log("動画2の再生エラー:", error);
     });
-  </script>
+  });
+
+  // 画像を見失ったとき
+  target.addEventListener("targetLost", () => {
+    video.pause();
+    video2.pause();
+  });
+</script>
 
 </body>
 </html>
