@@ -13,9 +13,17 @@ aidai/<br>
 ├── targets_barcero.mind<br>
 └── seikai.jpg<br>
 
+ターゲットを発見すると動画を再生する<br>
+https://jirochanf.github.io/aidai/meishi_douga.html<br>
+ターゲットファイルはこの画像
+<p align="center">
+<a href="https://jirochanf.github.io/aidai/meishi_douga.html"><img src="./2024_omote.jpg" alt="WebAR動画再生" width="700" height="365"></a>
+</p>
+
+
 ターゲットスキャン中にオーバーレイ画像を表示する<br>
-chatgptがkantan.htmlを修正<br>
 https://jirochanf.github.io/aidai/k_overl.html<br>
+chatgptがkantan.htmlを修正<br>
 https://hiukim.github.io/mind-ar-js-doc/examples/custom-ui<br>
 
 
