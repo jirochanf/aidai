@@ -88,17 +88,17 @@
   </script>
 
     <script>
-    const video = document.querySelector("#myVideo2");
+    const video2 = document.querySelector("#myVideo2");
     const target = document.querySelector(
       "[mindar-image-target]"
     );
     // 画像を認識したとき
     target.addEventListener("targetFound", () => {
-      video.play();
+      video2.play();
     });
     // 画像を見失ったとき
     target.addEventListener("targetLost", () => {
-      video.pause();
+      video2.pause();
     });
   </script>
 
