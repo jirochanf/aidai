@@ -1,0 +1,117 @@
+<!-- マーカーを使わないwebarで動画を２つ再生します -->
+<!doctype html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <script src="https://aframe.io/releases/1.0.4/aframe.min.js"></script>
+    <script src="https://raw.githack.com/AR-js-org/AR.js/master/aframe/build/aframe-ar.js"></script>
+    <script src="https://raw.githack.com/AR-js-org/studio-backend/master/src/modules/marker/tools/gesture-detector.js"></script>
+    <script src="https://raw.githack.com/AR-js-org/studio-backend/master/src/modules/marker/tools/gesture-handler.js"></script>
+
+    <style>
+        body {
+            margin: 0;
+            overflow: hidden;
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- 閉じるボタン -->
+    <div class="modal-window">
+        <button class="js-close button-close" id="closeButton">
+            Close
+        </button>
+    </div>
+
+    <a-scene>
+
+        <!-- 動画ファイル -->
+        <a-assets>
+            <video
+                id="vid1"
+                src="movie.mp4"
+                preload="auto"
+                loop
+                muted
+                playsinline
+                webkit-playsinline>
+            </video>
+
+            <video
+                id="vid2"
+                src="movie2.mp4"
+                preload="auto"
+                loop
+                muted
+                playsinline
+                webkit-playsinline>
+            </video>
+
+        </a-assets>
+
+        <!-- 1つ目の動画 -->
+        <a-video
+            src="#vid1"
+            position="0 -0.4 -2"
+            rotation="0 0 0"
+            width="1.2"
+            height="0.8"
+            class="clickable"
+            gesture-handler>
+        </a-video>
+
+        <!-- 2つ目の動画 -->
+        <a-video
+            src="#vid2"
+            position="0 0.8 -2"
+            rotation="0 0 0"
+            width="1.8"
+            height="1.4"
+            class="clickable"
+            gesture-handler>
+        </a-video>
+        </a-assets>
+
+        <a-camera id="my_camera"></a-camera>
+
+    </a-scene>
+
+    <script>
+
+        const video1 = document.getElementById('vid1');
+        const video2 = document.getElementById('vid2');
+        const closeButton = document.getElementById('closeButton');
+
+        // 画面の読み込みが完了したら動画を再生
+        window.addEventListener('load', function() {
+
+            video1.play().catch(function(error) {
+                console.log("動画1の再生待ち:", error);
+            });
+
+            video2.play().catch(function(error) {
+                console.log("動画2の再生待ち:", error);
+            });
+
+        });
+
+        // Closeボタンを押したとき
+        closeButton.addEventListener('click', function() {
+
+            video1.muted = true;
+            video2.muted = true;
+
+            video1.play();
+            video2.play();
+
+        });
+
+    </script>
+
+</body>
+</html>
