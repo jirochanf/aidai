@@ -1,4 +1,4 @@
-<!--名刺画像から　MindARを利用して自己紹介動画を再生　ターゲットtargets_swiss.mind　-->
+<!--自己紹介名刺動画-->
 <!DOCTYPE html>
 <html>
 <head>
@@ -14,6 +14,7 @@
 </head>
 
 <body>
+
   <a-scene
     mindar-image="imageTargetSrc: ./targets_swiss.mind;"
     color-space="sRGB"
@@ -21,18 +22,19 @@
     vr-mode-ui="enabled: false"
     device-orientation-permission-ui="enabled: false">
 
-    <!-- 表示する動画 -->
+    <!-- 動画 -->
     <a-assets>
       <video
         id="myVideo"
         src="./myintro.mp4"
         preload="auto"
-        loop="true"
+        loop
         muted
         playsinline
         webkit-playsinline
         crossorigin="anonymous">
       </video>
+    </a-assets>
 
     <!-- カメラ -->
     <a-camera
@@ -40,7 +42,7 @@
       look-controls="enabled: false">
     </a-camera>
 
-    <!-- 画像認識したときに動画を表示 -->
+    <!-- 画像認識 -->
     <a-entity mindar-image-target="targetIndex: 0">
 
       <a-plane
@@ -56,22 +58,33 @@
   </a-scene>
 
   <script>
-  const video = document.querySelector("#myVideo");
-  const target = document.querySelector(
-    "[mindar-image-target]"
-  );
+    const video = document.querySelector("#myVideo");
 
-  // 画像を認識したとき
-  target.addEventListener("targetFound", () => {
-    video.play().catch(error => {
-      console.log("動画1の再生エラー:", error);
+    const target = document.querySelector(
+      "[mindar-image-target]"
+    );
+
+    // 画像を認識したとき
+    target.addEventListener("targetFound", () => {
+
+      console.log("画像を認識しました");
+
+      video.play().catch(error => {
+        console.log("動画再生エラー:", error);
+      });
+
     });
 
-  // 画像を見失ったとき
-  target.addEventListener("targetLost", () => {
-    video.pause();
-  });
-</script>
+    // 画像を見失ったとき
+    target.addEventListener("targetLost", () => {
+
+      console.log("画像を見失いました");
+
+      video.pause();
+
+    });
+
+  </script>
 
 </body>
 </html>
